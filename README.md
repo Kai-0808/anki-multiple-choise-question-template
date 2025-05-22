@@ -4,7 +4,7 @@ This repository contains enhanced template for front and back cards, designed sp
 
 **Based on the work by [muctebanesiri](https://github.com/muctebanesiri/anki-multiple-choise-question-template)**
 
-
+![example](https://github.com/user-attachments/assets/ad63d36e-43f2-4e91-953f-e29cda14d86f)
 
 ### ✨ New Features
 
