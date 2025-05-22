@@ -16,6 +16,7 @@ This repository contains enhanced template for front and back cards, designed sp
   - **⚠️ Orange Warning**: Correct answer that you missed (didn't select)  
   - **❌ Red X**: Incorrect answer that you selected
   - **Green Background**: All correct answers are highlighted for easy identification
+- **Ruby Text Support** (not contained in `MCQ_Demo.apkg`): Added support for ruby text (especially for Japanese furigana) to allow readability assistance
 
 ### 🗑️ Removed Features
 

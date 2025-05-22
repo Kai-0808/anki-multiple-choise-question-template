@@ -1,3 +1,36 @@
+/* Japanese font support */
+@font-face {
+  font-family: 'Source Han Serif CN';
+  src: url('_SourceHanSerifCN-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Source Han Serif JP';
+  src: url('_SourceHanSerifJP-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'KleeOne LXGW Mono GB';
+  src: url('_KleeOneLXGWMonoGB.ttf') format('opentype');
+  font-weight: 500;
+  font-display: block;
+}
+
+/* Ruby text (furigana) support */
+.ios .jp:not(.word .jp) rt,
+.safari .jp:not(.word .jp) rt {
+  transform: translateY(0.6em);
+}
+
+/* Japanese text styling */
+.jp {
+  font-family: 'Source Han Serif JP', 'KleeOne LXGW Mono GB', 'Source Han Serif CN', serif;
+}
+
 #myCard {
   bottom: 0;
   left: 1%;
@@ -66,7 +99,7 @@ table td rowspan {
 }
 
 .card {
-  font-family: arial;
+  font-family: 'Source Han Serif JP', arial, serif;
   font-size: 20px;
   text-align: left;
   color: black;
@@ -148,7 +181,7 @@ table td rowspan {
 }
 
 .question-header {
-  font-family: "Arial";
+  font-family: 'Source Han Serif JP', "Arial", serif;
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 15px;
@@ -433,4 +466,11 @@ span.stacked {
 
 .nightMode .progress-dot.current {
   background-color: #4299e1;
+}
+
+/* Android platform uses system default font */
+.android .card,
+.android .question-header,
+.android .jp {
+  font-family: ui-sans-serif, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
 }
