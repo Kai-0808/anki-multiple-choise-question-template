@@ -8,6 +8,8 @@ This repository contains enhanced template for front and back cards, designed sp
 
 ### ✨ New Features
 
+>ℹ️**Note**: Some features (marked with ‼️) are not included in the `MCQ_Demo.apkg` file, but are available in the code files. You can simply replace them after importing the deck file.
+
 - **Group of Questions Support**: Create cards with up to 5 questions instead of just one
 - **Enhanced Layout & Styling**: Clearer question blocks with better visual separation and organization
 - **Note ID for Card Management**: Added optional Note ID field for clear card identification and organization
@@ -16,7 +18,8 @@ This repository contains enhanced template for front and back cards, designed sp
   - **⚠️ Orange Warning**: Correct answer that you missed (didn't select)  
   - **❌ Red X**: Incorrect answer that you selected
   - **Green Background**: All correct answers are highlighted for easy identification
-- **Ruby Text Support** (not contained in `MCQ_Demo.apkg`): Added support for ruby text (especially for Japanese furigana) to allow readability assistance
+- **Ruby Text Support**‼️: Added support for ruby text (especially for Japanese furigana) to allow readability assistance
+- **Stacked Layout for Header**‼️: Enhanced layout to better display `Note_ID` field
 
 ### 🗑️ Removed Features
 

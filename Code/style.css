@@ -114,11 +114,10 @@ table td rowspan {
   align-items: center;
 }
 
-/* Note ID and header styling */
+/* Note ID and header styling - FIXED STACKED LAYOUT */
 .card-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   padding: 10px 15px;
   margin-bottom: 15px;
   background-color: #f8f9fa;
@@ -132,13 +131,18 @@ table td rowspan {
 }
 
 .note-id {
+  align-self: flex-end; /* Right-align the Note_ID */
   font-family: "Arial", monospace;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 10px;
   color: #666666;
   background-color: #e9ecef;
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  white-space: nowrap;
+  line-height: 1.2;
+  margin-bottom: 2px;
+  order: -1; /* Make Note_ID appear first (at top) */
 }
 
 .nightMode .note-id {
@@ -151,6 +155,9 @@ table td rowspan {
   font-weight: 600;
   color: #333;
   margin: 0;
+  width: 100%;
+  line-height: 1.4;
+  order: 1; /* Make main text appear second (at bottom) */
 }
 
 .nightMode .card-title {
