@@ -2,13 +2,13 @@
   <div class="front">
     {{#Main_text}}<div class="card-header">
       <div class="card-title"><span class="jp">{{kanji:Main_text}}</span></div>
-      {{#Note_ID}}<div class="note-id">{{Note_ID}}</div>{{/Note_ID}}
+      {{#NoteID}}<div class="note-id">{{NoteID}}</div>{{/NoteID}}
     </div>{{/Main_text}}
 
-    {{^Main_text}}{{#Note_ID}}<div class="card-header">
+    {{^Main_text}}{{#NoteID}}<div class="card-header">
       <div class="card-title"></div>
-      <div class="note-id">{{Note_ID}}</div>
-    </div>{{/Note_ID}}{{/Main_text}}
+      <div class="note-id">{{NoteID}}</div>
+    </div>{{/NoteID}}{{/Main_text}}
 
     <!-- Question 1 -->
     {{#Question_1}}<div class="question-block" data-question="1">
@@ -260,6 +260,10 @@
           <label for="Shuffling">Shuffling</label>
           <input id="Shuffling" type="checkbox">
         </div>
+        <div class="check-box">
+          <label for="ShowNoteID">Show Note ID</label>
+          <input id="ShowNoteID" type="checkbox">
+        </div>
       </div>
     </div>
   </div>
@@ -432,9 +436,25 @@
     HandelEvents();
   }
 
+  // NoteID visibility toggle function
+  function HandleNoteIDToggle() {
+    var showNoteID = $("#ShowNoteID").is(":checked");
+    Persistence.setItem("ShowNoteIDBox", showNoteID);
+
+    var noteIdElements = document.querySelectorAll('.note-id');
+    noteIdElements.forEach(element => {
+      element.style.display = showNoteID ? 'block' : 'none';
+    });
+  }
+
   //------------------------------------------------
   if (Persistence.getItem("ShufflingBox") == null) {
     Persistence.setItem("ShufflingBox", false);
+  }
+
+  // Initialize NoteID toggle
+  if (Persistence.getItem("ShowNoteIDBox") == null) {
+    Persistence.setItem("ShowNoteIDBox", true);
   }
 
   function addOptionLetters() {
@@ -459,7 +479,13 @@
   addOptionLetters();
 
   document.querySelector("#Shuffling").addEventListener("click", HandleShufflingBox);
+  document.querySelector("#ShowNoteID").addEventListener("click", HandleNoteIDToggle);
+
   $("#Shuffling").prop("checked", Persistence.getItem("ShufflingBox"));
+  $("#ShowNoteID").prop("checked", Persistence.getItem("ShowNoteIDBox"));
+
+  // Apply initial NoteID visibility state
+  HandleNoteIDToggle();
 
   if ($("#Shuffling").is(":checked")) {
     activeQuestions.forEach(qNum => {
@@ -503,6 +529,7 @@
       }
     }
   });
+
   // Japanese text space removal
   function removeSpaces() {
     document.querySelectorAll('.jp').forEach(el => {

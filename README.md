@@ -19,7 +19,8 @@ This repository contains enhanced template for front and back cards, designed sp
   - **❌ Red X**: Incorrect answer that you selected
   - **Green Background**: All correct answers are highlighted for easy identification
 - **Ruby Text Support**‼️: Added support for ruby text (especially for Japanese furigana) to allow readability assistance
-- **Stacked Layout for Header**‼️: Enhanced layout to better display `Note_ID` field
+- **Stacked Layout for Header**‼️: Enhanced layout to better display `NoteID` field
+- **Note ID Visibility**‼️: Added a toggle to show or hide the `NoteID` field in the header
 
 ### 🗑️ Removed Features
 
@@ -30,7 +31,7 @@ This repository contains enhanced template for front and back cards, designed sp
 
 ```
 Main_text (optional)
-Note_ID (optional)
+NoteID (optional)
 Question_1
 Question_2 (optional)
 Question_3 (optional) 
